@@ -21,7 +21,7 @@ pipeline {
         
         stage('Quality Check') {
             steps {
-                timeout(time: 120, unit: 'SECONDS') {
+                timeout(time: 1000, unit: 'SECONDS') {
                     withSonarQubeEnv('sonar-server') {
                         sh '''
                         $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=boardgame -Dsonar.projectKey=boardgame \
